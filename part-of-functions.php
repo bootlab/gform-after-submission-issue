@@ -1,8 +1,8 @@
 <?php
-add_action( 'ucp_custom_gf_background_processor_27', 'send_entry_from_form_27_to_26', 10, 2 );
+/*add_action( 'ucp_custom_gf_background_processor_27', 'send_entry_from_form_27_to_26', 10, 2 );
 function send_entry_from_form_27_to_26( $entry, $form ) {
     //add_entry_from_gfform_27_to_26($entry);
-}
+}*/
 
 function add_entry_from_gfform_27_to_26($entry): void {
     $form_id                       = 26;
@@ -68,7 +68,8 @@ class UCP_Custom_GF_Background_Processor extends GF_Background_Process {
      * @return void
      */
     public function init() {
-        add_action( 'gform_after_submission', array( $this, 'after_submission' ), 10, 2 );
+        add_action( 'gform_after_submission_27', array( $this, 'after_submission' ), 10, 2 );
+        //add_action( 'gform_after_submission', array( $this, 'after_submission' ), 10, 2 );
         add_action( 'gform_uninstalling', array( $this, 'uninstalling' ) );
     }
 
